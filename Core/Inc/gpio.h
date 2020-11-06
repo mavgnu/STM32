@@ -32,9 +32,6 @@
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-#define LED_GPIOx	GPIOG
-#define LED3_GREEN_PinNumber	GPIO_PIN_13
-#define LED4_RED_PinNumber	GPIO_PIN_14
 #define LED3_GREEN_ID	1
 #define LED4_RED_ID	2
 /* USER CODE END Private defines */

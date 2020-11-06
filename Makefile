@@ -86,7 +86,7 @@ BIN = $(CP) -O binary -S
 # STLINK
 #######################################
 
-STLINK = $(whereis st-flash)
+STLINK = /usr/local/bin/st-flash
  
 #######################################
 # CFLAGS

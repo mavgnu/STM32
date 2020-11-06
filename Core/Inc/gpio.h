@@ -35,8 +35,8 @@
 #define LED_GPIOx	GPIOG
 #define LED3_GREEN_PinNumber	GPIO_PIN_13
 #define LED4_RED_PinNumber	GPIO_PIN_14
-#define  LED3_GREEN_ID	2
-#define  LED4_RED_ID	3
+#define LED3_GREEN_ID	1
+#define LED4_RED_ID	2
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);

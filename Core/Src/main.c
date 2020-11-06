@@ -64,7 +64,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	int i;
+  int i;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -94,13 +94,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	for(i = 0; i < 1000000; i++);
-		gpio_led_state(LED3_GREEN_ID, 1);
-		gpio_led_state(LED4_RED_ID, 0);
-		
-	for(i = 0; i < 1000000; i++);
-		gpio_led_state(LED3_GREEN_ID, 0);
-		gpio_led_state(LED4_RED_ID, 1);
+	for (i=0;i<1000000;i++);
+	
+	gpio_led_state(LED3_GREEN_ID,1);
+	gpio_led_state(LED4_RED_ID,0);
+	
+	for (i=0;i<1000000;i++);
+	
+	gpio_led_state(LED3_GREEN_ID,0);
+	gpio_led_state(LED4_RED_ID,1);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

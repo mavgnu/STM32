@@ -47,27 +47,28 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, LD3_Pin|LD4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_GPIOx, LED3_GREEN_PinNumber|LED4_RED_PinNumber, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PGPin PGPin */
-  GPIO_InitStruct.Pin = LD3_Pin|LD4_Pin;
+  /*Configure GPIO pins : PG13 PG14 */
+  GPIO_InitStruct.Pin = LED3_GREEN_PinNumber|LED4_RED_PinNumber;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+  HAL_GPIO_Init(LED_GPIOx, &GPIO_InitStruct);
 
 }
 
 /* USER CODE BEGIN 2 */
-void  gpio_led_state(uint8_t  LED_ID , uint8_t  state) {
-GPIO_PinState  pinState;
-	pinState = (state  == 1) ? GPIO_PIN_SET : GPIO_PIN_RESET;
-	switch(LED_ID) {
-		case  LED3_GREEN_ID:
-			HAL_GPIO_WritePin(GPIOG , LED3_GREEN_PinNumber , pinState);
+void gpio_led_state(uint8_t LED_ID, uint8_t state){
+	GPIO_PinState pinState;
+	
+	pinState = (state == 1) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+	switch(LED_ID){
+		case LED3_GREEN_ID:
+			HAL_GPIO_WritePin(LED_GPIOx, LED3_GREEN_PinNumber, pinState);
 			break;
-		case  LED4_RED_ID:
-			HAL_GPIO_WritePin(GPIOG , LED4_RED_PinNumber , pinState);
+		case LED4_RED_ID:
+			HAL_GPIO_WritePin(LED_GPIOx, LED4_RED_PinNumber, pinState);
 			break;
 	}
 }

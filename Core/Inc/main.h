@@ -62,6 +62,7 @@ void Error_Handler(void);
 #define LED_GPIOx	GPIOG
 #define LED3_GREEN_PinNumber	GPIO_PIN_13
 #define LED4_RED_PinNumber	GPIO_PIN_14
+#define DELAY_MS	1000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
